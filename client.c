@@ -6,7 +6,7 @@
 /*   By: itomescu <itomescu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 10:04:24 by itomescu          #+#    #+#             */
-/*   Updated: 2021/12/29 17:39:41 by itomescu         ###   ########.fr       */
+/*   Updated: 2021/12/31 21:36:39 by itomescu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ int	main(int argc, const char *argv[])
 	struct sigaction	s;
 	int					spid;
 
-	spid = ft_atoi(argv[1]);
+	if (argc > 1)
+		spid = ft_atoi(argv[1]);
+	else
+		return(0);
 	if (argc != 3 || (!spid))
 	{
 		write(1, "Wrong arguments", 15);
